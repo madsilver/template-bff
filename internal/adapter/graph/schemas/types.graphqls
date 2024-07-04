@@ -1,0 +1,4 @@
+type Health {
+    message: String!
+    status_code: Int!
+}
