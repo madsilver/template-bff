@@ -14,7 +14,7 @@ func main() {
 	logger.Info("running template-bff")
 
 	client := http.NewHttpClient()
-	resolver := graph.NewResolver(client)
+	resolver := graph.NewResolver(client, logger)
 	graphServer := server.NewGraphqlServer(resolver)
 
 	err := <-server.Start(graphServer)

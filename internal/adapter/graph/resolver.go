@@ -13,8 +13,8 @@ type Resolver struct {
 	HealthUseCase domain.HealthUseCase
 }
 
-func NewResolver(http domain.HttpClient) *Resolver {
+func NewResolver(http domain.HttpClient, logger domain.Logger) *Resolver {
 	return &Resolver{
-		HealthUseCase: usecases.NewHealthUseCase(http),
+		HealthUseCase: usecases.NewHealthUseCase(http, logger),
 	}
 }

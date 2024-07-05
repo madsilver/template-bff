@@ -26,6 +26,7 @@ func (h *httpClient) Send(ctx context.Context, req *dto.Request) ([]byte, int, e
 	if req.Body != nil {
 		buf = bytes.NewBuffer(req.Body.([]byte))
 	}
+	
 	request, err := http.NewRequest(req.Method, req.URL, buf)
 	if err != nil {
 		return nil, http.StatusInternalServerError, err
