@@ -8,7 +8,7 @@ import (
 	"github.com/madsilver/template-bff/internal/infra/server/utils"
 )
 
-func Sanitize() echo.MiddlewareFunc {
+func BodySanitize() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			var body []byte

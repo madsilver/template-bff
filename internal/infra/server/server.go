@@ -11,7 +11,7 @@ import (
 func Start(graphqlServer GraphServer) chan error {
 	e := echo.New()
 	e.Use(middleware.HeaderMapper())
-	e.Use(middleware.Sanitize())
+	e.Use(middleware.BodySanitize())
 	e.Server.Addr = "0.0.0.0:8080"
 	e.POST("query", handler.NewGraphqlHandler(graphqlServer).Handle)
 	e.GET("health", health)
