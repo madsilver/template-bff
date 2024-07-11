@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 1m
+  evaluation_interval: 1m
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+
+scrape_configs:
+  - job_name: 'template-bff'
+    scrape_interval: 1m
+    scrape_timeout: 1m
+    static_configs:
+      - targets: ['host.docker.interval:8080']
+x
+    # tls_config:
+    #   insecure_skip_verify: true
